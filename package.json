@@ -10,6 +10,7 @@
     "license": "ISC",
     "dependencies": {
         "express": "^4.17.1",
-        "jest": "^26.5.3"
+        "jest": "^26.5.3",
+        "uuid": "^8.3.1"
     }
 }
