@@ -54,7 +54,6 @@ app.post("/api/notes", function(req, res) {
 
 app.delete("/api/notes/:id", function(req, res) {
     req.params.id
-        // filter method will return new array thus the need to either set empty array to equal
     notes = notes.filter(n => {
         if (req.params.id === n.id) {
             return false
