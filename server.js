@@ -47,7 +47,7 @@ app.post("/api/notes", function(req, res) {
     // Push back in the information logged in back into the notes array
     // Then send back response in JSON format
     notes.push(req.body)
-        // Would normally use writeFile for asynchronous functionality but for simplicity sake for a small project like this it will do.
+        // Would normally use writeFile for asynchronous functionality but for simplicity sake for a small project like this writeFileSync will do.
     fs.writeFileSync('./db/db.json', JSON.stringify(notes));
     res.json(notes)
 });
@@ -60,11 +60,12 @@ app.delete("/api/notes/:id", function(req, res) {
         } else {
             return true
         }
-    })
+    });
     fs.writeFileSync('./db/db.json', JSON.stringify(notes));
     res.json(notes)
 });
 // ======== END OF API ROUTES ======================
+
 
 // Starts the server to listen for requests
 app.listen(PORT, function() {
